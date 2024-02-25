@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #05020b;
+            color:#d0bcf5;
+            font-family:'Montserrat', sans-serif;
+        }
+        .timerBlock{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 10vh;
+            position: fixed;
+            top: 5vh;
+            right: 10vh;
+            padding: 10px 20px;
+            background-color: #d0bcf5;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: 900;
+            color:#05020b;
+        }
+        .questionBlock{
+            background-color: #2a184d;
+            border-radius: 15px;
+            width: 30vh;
+            margin-top: 1vh;
+            padding: 10px 20px;
+        }
+        form{
+            margin-left: 10vh;
+        }
+        input[type="submit"]{
+            padding: 10px 20px;
+            background-color: #d0bcf5;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: 900;
+        }
+        input[type="submit"]:hover{
+            box-shadow: 0 0 10px #d0bcf5;
+        }
+    </style>
+</head>
+<body>
+    <div class="timerBlock">
+        <p>Time Remaining: <span id="timer"></span></p>
+    </div>
+    <form>
+        <p>Tick the correct answers</p>
+        <div class="questionBlock">
+            <p>Question 1</p>
+            <input type="radio" name="question1" value="option1" required>Option 1<br>
+            <input type="radio" name="question1" value="option2" required>Option 2<br>
+            <input type="radio" name="question1" value="option3" required>Option 3<br>
+            <input type="radio" name="question1" value="option4" required>Option 4<br>
+        </div>
+        <div class="questionBlock">
+            <p>Question 2</p>
+            <input type="radio" name="question2" value="option1" required>Option 1<br>
+            <input type="radio" name="question2" value="option2" required>Option 2<br>
+            <input type="radio" name="question2" value="option3" required>Option 3<br>
+            <input type="radio" name="question2" value="option4" required>Option 4<br>
+        </div>
+        <div class="questionBlock">
+            <p>Question 3</p>
+            <input type="radio" name="question3" value="option1" required>Option 1<br>
+            <input type="radio" name="question3" value="option2" required>Option 2<br>
+            <input type="radio" name="question3" value="option3" required>Option 3<br>
+            <input type="radio" name="question3" value="option4" required>Option 4<br>
+        </div>
+        <div class="questionBlock">
+            <p>Question 4</p>
+            <input type="radio" name="question4" value="option1" required>Option 1<br>
+            <input type="radio" name="question4" value="option2" required>Option 2<br>
+            <input type="radio" name="question4" value="option3" required>Option 3<br>
+            <input type="radio" name="question4" value="option4" required>Option 4<br>
+        </div>
+        <div class="questionBlock">
+            <p>Question 5</p>
+            <input type="radio" name="question5" value="option1" required>Option 1<br>
+            <input type="radio" name="question5" value="option2" required>Option 2<br>
+            <input type="radio" name="question5" value="option3" required>Option 3<br>
+            <input type="radio" name="question5" value="option4" required>Option 4<br>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+<script>
+    document.querySelector('form').addEventListener('submit', (e)=>{
+        e.preventDefault();
+        submit();
+    },false);
+
+    var time = 60;
+    var timer = document.getElementById('timer');
+    timer.innerHTML = time+"s";
+    var interval = setInterval(()=>{
+        time--;
+        timer.innerHTML = time+"s";
+        if(time == 0){
+            submit();
+        }
+    }, 1000);
+
+    function submit(){
+        clearInterval(interval);
+        var question1 = document.querySelector('input[name="question1"]:checked').value;
+        var question2 = document.querySelector('input[name="question2"]:checked').value;
+        var question3 = document.querySelector('input[name="question3"]:checked').value;
+        var question4 = document.querySelector('input[name="question4"]:checked').value;
+        var question5 = document.querySelector('input[name="question5"]:checked').value;
+
+        sessionStorage.setItem('question1', question1);
+        sessionStorage.setItem('question2', question2);
+        sessionStorage.setItem('question3', question3);
+        sessionStorage.setItem('question4', question4);
+        sessionStorage.setItem('question5', question5);
+        sessionStorage.setItem("time", time);
+
+        window.location.href = 'result.html';
+    }
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="congo">
+        <h1>Congratulations</h1>
+        <p>You have successfully completed the quiz</p>
+    </div>
+    <div class="submitted">
+        <h1>Submitted</h1>
+        <p>Question 1: <span id="question1"></span></p>
+        <p>Question 2: <span id="question2"></span></p>
+        <p>Question 3: <span id="question3"></span></p>
+        <p>Question 4: <span id="question4"></span></p>
+        <p>Question 5: <span id="question5"></span></p>
+        <p>Time Taken: <span id="time"></span></p>
+    </div>
+</body>
+<script>
+    var question1 = sessionStorage.getItem('question1');
+    var question2 = sessionStorage.getItem('question2');
+    var question3 = sessionStorage.getItem('question3');
+    var question4 = sessionStorage.getItem('question4');
+    var question5 = sessionStorage.getItem('question5');
+    var time = sessionStorage.getItem("time");
+
+    document.getElementById('question1').innerHTML = question1;
+    document.getElementById('question2').innerHTML = question2;
+    document.getElementById('question3').innerHTML = question3;
+    document.getElementById('question4').innerHTML = question4;
+    document.getElementById('question5').innerHTML = question5;
+    document.getElementById('time').innerHTML = time;
+</script>
+</html>

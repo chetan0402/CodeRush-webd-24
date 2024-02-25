@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background-color: #05020b;
+            color:#d0bcf5;
+            font-family:'Montserrat', sans-serif;
+        }
+        .main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .card{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #2a184d;
+            border-radius: 10%;
+            width: 30vh;
+            height: 30vh;
+        }
+        button{
+            padding: 10px 20px;
+            background-color: #d0bcf5;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: 900;
+        }
+        button:hover{
+            box-shadow: 0 0 10px #d0bcf5;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+    <div class="card">
+        <p>Start the test</p>
+        <button onclick="pageClick()">Start</button>
+    </div>
+    </div>
+</body>
+<script>
+    function pageClick(){
+        window.location.href = 'page2.html';
+    }
+</script>
+</html>
