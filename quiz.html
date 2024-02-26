@@ -22,13 +22,14 @@
             height: 10vh;
             position: fixed;
             top: 5vh;
-            right: 5vw;
+            right: 2vw;
             padding: 10px 20px;
             background-color: var(--shade-grade-4);
             border: none;
-            border-radius: 5px;
+            border-radius: 10vh;
             font-size: 20px;
             font-weight: 900;
+            width: 15vw;
             color:var(--shade-grade-1);
         }
         .questionBlock{
@@ -45,12 +46,19 @@
         .questionBlock input:checked + label{
             color:gray;
         }
+        label:hover{
+            color:gray;
+        }
+        .questionBlock input:hover + label{
+            color:gray;
+        }
         .questionBlock hr{
             margin: 10px -20px;
             border: 1px dashed var(--shade-grade-3);
         }
         .questionBlock > p{
             margin-top: 1vh;
+            letter-spacing: 1px;
         }
         form{
             padding-top: 5px;
