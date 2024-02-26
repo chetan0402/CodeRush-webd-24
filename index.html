@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>First Page</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="colors.css">
     <style>
         body{
-            background-color: #05020b;
-            color:#d0bcf5;
+            background-color: var(--shade-grade-1);
+            color: var(--shade-grade-4);
             font-family:'Montserrat', sans-serif;
         }
         .main{
@@ -24,14 +25,14 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-color: #2a184d;
+            background-color: var(--shade-grade-2);
             border-radius: 10%;
             width: 30vh;
             height: 30vh;
         }
         button{
             padding: 10px 20px;
-            background-color: #d0bcf5;
+            background-color: var(--shade-grade-4);
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -39,7 +40,7 @@
             font-weight: 900;
         }
         button:hover{
-            box-shadow: 0 0 10px #d0bcf5;
+            box-shadow: 0 0 10px var(--shade-grade-4);
             
         }
     </style>

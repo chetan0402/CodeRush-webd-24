@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="colors.css">
+    <title>Give test</title>
     <style>
         body{
-            background-color: #05020b;
-            color:#d0bcf5;
+            background-color: var(--shade-grade-1);
+            color: var(--shade-grade-4);
             font-family:'Montserrat', sans-serif;
             font-weight: 800;
         }
@@ -20,30 +24,38 @@
             top: 5vh;
             right: 5vw;
             padding: 10px 20px;
-            background-color: #d0bcf5;
+            background-color: var(--shade-grade-4);
             border: none;
             border-radius: 5px;
             font-size: 20px;
             font-weight: 900;
-            color:#05020b;
+            color:var(--shade-grade-1);
         }
         .questionBlock{
-            background-color: #2a184d;
+            background-color: var(--shade-grade-2);
             border-radius: 15px;
             margin-top: 1vh;
             margin-right: 1vw;
             padding: 20px 20px;
         }
         .questionBlock input[type="radio"]{
-            margin: 10px 0;
+            margin: 1vh 0;
+            margin-right: 0.5vw;
         }
         .questionBlock input:checked + label{
             color:gray;
         }
+        .questionBlock hr{
+            margin: 10px -20px;
+            border: 1px dashed var(--shade-grade-3);
+        }
+        .questionBlock > p{
+            margin-top: 1vh;
+        }
         form{
             padding-top: 5px;
             margin: 10vh 20vw;
-            background-color: #9d75eb;
+            background-color: var(--shade-grade-3);
             padding-left: 10px;
             padding-bottom: 20px;
             border-radius:10px;
@@ -53,9 +65,12 @@
             font-weight: 900;
             text-align: center;
         }
+        form > p{
+            color: var(--shade-grade-2);
+        }
         input[type="submit"]{
             padding: 10px 20px;
-            background-color: #d0bcf5;
+            background-color: var(--shade-grade-4);
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -63,7 +78,7 @@
             font-weight: 900;
         }
         input[type="submit"]:hover{
-            box-shadow: 0 0 10px #d0bcf5;
+            box-shadow: 0 0 10px var(--shade-grade-4);
         }
     </style>
 </head>
@@ -75,6 +90,7 @@
         <p>Tick the correct answers</p>
         <div class="questionBlock">
             <p>Question 1</p>
+            <hr>
             <input type="radio" name="question1" value="option1" ><label>Option 1</label><br>
             <input type="radio" name="question1" value="option2" ><label>Option 2</label><br>
             <input type="radio" name="question1" value="option3" ><label>Option 3</label><br>
@@ -82,6 +98,7 @@
         </div>
         <div class="questionBlock">
             <p>Question 2</p>
+            <hr>
             <input type="radio" name="question2" value="option1" ><label>Option 1</label><br>
             <input type="radio" name="question2" value="option2" ><label>Option 2</label><br>
             <input type="radio" name="question2" value="option3" ><label>Option 3</label><br>
@@ -89,6 +106,7 @@
         </div>
         <div class="questionBlock">
             <p>Question 3</p>
+            <hr>
             <input type="radio" name="question3" value="option1" ><label>Option 1</label><br>
             <input type="radio" name="question3" value="option2" ><label>Option 2</label><br>
             <input type="radio" name="question3" value="option3" ><label>Option 3</label><br>
@@ -96,6 +114,7 @@
         </div>
         <div class="questionBlock">
             <p>Question 4</p>
+            <hr>
             <input type="radio" name="question4" value="option1" ><label>Option 1</label><br>
             <input type="radio" name="question4" value="option2" ><label>Option 2</label><br>
             <input type="radio" name="question4" value="option3" ><label>Option 3</label><br>
@@ -103,6 +122,7 @@
         </div>
         <div class="questionBlock">
             <p>Question 5</p>
+            <hr>
             <input type="radio" name="question5" value="option1" ><label>Option 1</label><br>
             <input type="radio" name="question5" value="option2" ><label>Option 2</label><br>
             <input type="radio" name="question5" value="option3" ><label>Option 3</label><br>
