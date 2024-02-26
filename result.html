@@ -4,6 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            background-color: #05020b;
+            color:#d0bcf5;
+            font-family:'Montserrat', sans-serif;
+            font-weight: 800;
+        }
+        .congo{
+            text-align: center;
+            margin-top: 10vh;
+        }
+        .submitted{
+            background-color: #2a184d;
+            border-radius: 15px;
+            margin: 1vh 10vw;
+            padding: 20px 20px;
+        }
+        .submitted h1{
+            font-size: 30px;
+            font-weight: 900;
+            text-align: center;
+        }
+        .submitted p{
+            padding-left: 1vw;
+        }
+    </style>
 </head>
 <body>
     <div class="congo">
@@ -26,7 +52,7 @@
     var question3 = sessionStorage.getItem('question3');
     var question4 = sessionStorage.getItem('question4');
     var question5 = sessionStorage.getItem('question5');
-    var time = sessionStorage.getItem("time");
+    var time = 60-parseInt(sessionStorage.getItem("time"));
 
     document.getElementById('question1').innerHTML = question1;
     document.getElementById('question2').innerHTML = question2;

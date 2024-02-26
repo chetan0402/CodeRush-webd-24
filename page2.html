@@ -9,6 +9,7 @@
             background-color: #05020b;
             color:#d0bcf5;
             font-family:'Montserrat', sans-serif;
+            font-weight: 800;
         }
         .timerBlock{
             display: flex;
@@ -17,7 +18,7 @@
             height: 10vh;
             position: fixed;
             top: 5vh;
-            right: 10vh;
+            right: 5vw;
             padding: 10px 20px;
             background-color: #d0bcf5;
             border: none;
@@ -29,12 +30,28 @@
         .questionBlock{
             background-color: #2a184d;
             border-radius: 15px;
-            width: 30vh;
             margin-top: 1vh;
-            padding: 10px 20px;
+            margin-right: 1vw;
+            padding: 20px 20px;
+        }
+        .questionBlock input[type="radio"]{
+            margin: 10px 0;
+        }
+        .questionBlock input:checked + label{
+            color:gray;
         }
         form{
-            margin-left: 10vh;
+            padding-top: 5px;
+            margin: 10vh 20vw;
+            background-color: #9d75eb;
+            padding-left: 10px;
+            padding-bottom: 20px;
+            border-radius:10px;
+        }
+        form p{
+            font-size: 30px;
+            font-weight: 900;
+            text-align: center;
         }
         input[type="submit"]{
             padding: 10px 20px;
@@ -58,41 +75,41 @@
         <p>Tick the correct answers</p>
         <div class="questionBlock">
             <p>Question 1</p>
-            <input type="radio" name="question1" value="option1" required>Option 1<br>
-            <input type="radio" name="question1" value="option2" required>Option 2<br>
-            <input type="radio" name="question1" value="option3" required>Option 3<br>
-            <input type="radio" name="question1" value="option4" required>Option 4<br>
+            <input type="radio" name="question1" value="option1" ><label>Option 1</label><br>
+            <input type="radio" name="question1" value="option2" ><label>Option 2</label><br>
+            <input type="radio" name="question1" value="option3" ><label>Option 3</label><br>
+            <input type="radio" name="question1" value="option4" ><label>Option 4</label><br>
         </div>
         <div class="questionBlock">
             <p>Question 2</p>
-            <input type="radio" name="question2" value="option1" required>Option 1<br>
-            <input type="radio" name="question2" value="option2" required>Option 2<br>
-            <input type="radio" name="question2" value="option3" required>Option 3<br>
-            <input type="radio" name="question2" value="option4" required>Option 4<br>
+            <input type="radio" name="question2" value="option1" ><label>Option 1</label><br>
+            <input type="radio" name="question2" value="option2" ><label>Option 2</label><br>
+            <input type="radio" name="question2" value="option3" ><label>Option 3</label><br>
+            <input type="radio" name="question2" value="option4" ><label>Option 4</label><br>
         </div>
         <div class="questionBlock">
             <p>Question 3</p>
-            <input type="radio" name="question3" value="option1" required>Option 1<br>
-            <input type="radio" name="question3" value="option2" required>Option 2<br>
-            <input type="radio" name="question3" value="option3" required>Option 3<br>
-            <input type="radio" name="question3" value="option4" required>Option 4<br>
+            <input type="radio" name="question3" value="option1" ><label>Option 1</label><br>
+            <input type="radio" name="question3" value="option2" ><label>Option 2</label><br>
+            <input type="radio" name="question3" value="option3" ><label>Option 3</label><br>
+            <input type="radio" name="question3" value="option4" ><label>Option 4</label><br>
         </div>
         <div class="questionBlock">
             <p>Question 4</p>
-            <input type="radio" name="question4" value="option1" required>Option 1<br>
-            <input type="radio" name="question4" value="option2" required>Option 2<br>
-            <input type="radio" name="question4" value="option3" required>Option 3<br>
-            <input type="radio" name="question4" value="option4" required>Option 4<br>
+            <input type="radio" name="question4" value="option1" ><label>Option 1</label><br>
+            <input type="radio" name="question4" value="option2" ><label>Option 2</label><br>
+            <input type="radio" name="question4" value="option3" ><label>Option 3</label><br>
+            <input type="radio" name="question4" value="option4" ><label>Option 4</label><br>
         </div>
         <div class="questionBlock">
             <p>Question 5</p>
-            <input type="radio" name="question5" value="option1" required>Option 1<br>
-            <input type="radio" name="question5" value="option2" required>Option 2<br>
-            <input type="radio" name="question5" value="option3" required>Option 3<br>
-            <input type="radio" name="question5" value="option4" required>Option 4<br>
+            <input type="radio" name="question5" value="option1" ><label>Option 1</label><br>
+            <input type="radio" name="question5" value="option2" ><label>Option 2</label><br>
+            <input type="radio" name="question5" value="option3" ><label>Option 3</label><br>
+            <input type="radio" name="question5" value="option4" ><label>Option 4</label><br>
         </div>
+        <br>
         <input type="submit" value="Submit">
-    </form>
 </body>
 <script>
     document.querySelector('form').addEventListener('submit', (e)=>{
@@ -113,11 +130,11 @@
 
     function submit(){
         clearInterval(interval);
-        var question1 = document.querySelector('input[name="question1"]:checked').value;
-        var question2 = document.querySelector('input[name="question2"]:checked').value;
-        var question3 = document.querySelector('input[name="question3"]:checked').value;
-        var question4 = document.querySelector('input[name="question4"]:checked').value;
-        var question5 = document.querySelector('input[name="question5"]:checked').value;
+        var question1 = document.querySelector('input[name="question1"]:checked')?.value || "None";
+        var question2 = document.querySelector('input[name="question2"]:checked')?.value || "None";
+        var question3 = document.querySelector('input[name="question3"]:checked')?.value || "None";
+        var question4 = document.querySelector('input[name="question4"]:checked')?.value || "None";
+        var question5 = document.querySelector('input[name="question5"]:checked')?.value || "None";
 
         sessionStorage.setItem('question1', question1);
         sessionStorage.setItem('question2', question2);
