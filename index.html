@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="colors.css">
+    <script src="injectTheme.js"></script>
     <style>
         body{
             background-color: var(--shade-grade-1);
@@ -52,10 +53,11 @@
     <div class="card">
         <h1>Start the test</h1>
         <p>The test is timed.</p>
-        <p>The test contained 5 questions.</p>
+        <p>The test contains 5 questions.</p>
         <button onclick="pageClick()">Start</button>
     </div>
     </div>
+    <img id="injectTheme">
 </body>
 <script>
     function pageClick(){

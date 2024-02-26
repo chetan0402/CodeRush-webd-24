@@ -1,8 +1,8 @@
 :root{
     --shade-grade-1: #1c1c1c;
-    --shade-grade-2: #442f6f;
-    --shade-grade-3: #9d75eb;
-    --shade-grade-4: #d0bcf5;
+    --shade-grade-2: #292929;
+    --shade-grade-3: #636363;
+    --shade-grade-4: #d3d3d3;
 }
 ::-webkit-scrollbar{
     width:10px;
@@ -16,4 +16,13 @@
 }
 ::-webkit-scrollbar-thumb:hover{
     background: var(--shade-grade-4);
+}
+#injectTheme{
+    position: fixed;
+    bottom: 5vh;
+    right: 2vw;
+    height: 10vh;
+    width: 10vh;
+    background-color: white;
+    border-radius: 50%;
 }
