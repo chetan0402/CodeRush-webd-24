@@ -3,6 +3,7 @@
     --shade-grade-2: #292929;
     --shade-grade-3: #636363;
     --shade-grade-4: #d3d3d3;
+    --transition-duration: 0.5s;
 }
 ::-webkit-scrollbar{
     width:10px;
@@ -25,4 +26,10 @@
     width: 10vh;
     background-color: white;
     border-radius: 50%;
+    cursor: pointer;
+}
+
+.loading{
+    display:inline;
+    height:2vh;
 }

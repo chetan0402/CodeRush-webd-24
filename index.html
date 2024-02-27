@@ -8,13 +8,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="colors.css">
-    <script src="injectTheme.js"></script>
+    <script src="inject.js"></script>
     <style>
         body{
             background-color: var(--shade-grade-1);
             color: var(--shade-grade-4);
             font-family:'Montserrat', sans-serif;
             overflow: hidden;
+            transition: all var(--transition-duration);
         }
         .main{
             display: flex;
@@ -32,6 +33,7 @@
             width: 50vh;
             height: 40vh;
             box-shadow: 0 0 10px var(--shade-grade-2);
+            transition: all var(--transition-duration);
         }
         button{
             padding: 10px 20px;
@@ -41,10 +43,11 @@
             cursor: pointer;
             font-size: 20px;
             font-weight: 900;
+            transition: all var(--transition-duration);
         }
         button:hover{
             box-shadow: 0 0 10px var(--shade-grade-4);
-            
+            transition: all var(--transition-duration);
         }
     </style>
 </head>
@@ -61,7 +64,11 @@
 </body>
 <script>
     function pageClick(){
-        window.location.href = 'quiz.html';
+        const button = document.querySelector('button');
+        button.innerHTML = "Loading <img class='loading' src='loading.gif'>";
+        setTimeout(()=>{
+            window.location.href = 'quiz.html';
+        },700);
     }
 </script>
 </html>
