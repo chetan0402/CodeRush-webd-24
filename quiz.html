@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,900;1,900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="colors.css">
     <script src="inject.js"></script>
@@ -83,6 +83,7 @@
             margin-right: 1vw;
             padding: 20px 20px;
             transition: all var(--transition-duration);
+            box-shadow: 0 0 10px var(--shade-grade-2);
         }
 
         .questionBlock input[type="radio"] {
@@ -150,6 +151,61 @@
             box-shadow: 0 0 10px var(--shade-grade-4);
             transition: all var(--transition-duration);
         }
+
+        #alert {
+            position: fixed;
+            background-color: var(--shade-grade-2);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: all var(--transition-duration);
+            padding: 1.2vh 1.5vw;
+            border: 1px solid var(--shade-grade-3);
+            box-shadow: 0 0 10px var(--shade-grade-3);
+        }
+
+        .cover {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+            backdrop-filter: blur(5px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+        }
+
+        .buttons>div {
+            padding: 10px 20px;
+            background-color: var(--shade-grade-4);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: 900;
+            transition: all var(--transition-duration);
+            color: var(--shade-grade-1);
+        }
+
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 
@@ -202,12 +258,38 @@
         <br>
         <input type="submit" value="Submit">
         <img id="injectTheme">
+        <div class="cover hidden">
+            <div id="alert">
+                <h2>Do you want to submit?</h2>
+                <br>
+                <ul>
+                    <li>You have answered <span id="countAnswer">0</span> question.</li>
+                </ul>
+                <br>
+                <div class="buttons">
+                    <div id="yes">Yes</div>
+                    <div id="no">No</div>
+                </div>
+            </div>
+        </div>
 </body>
 <script>
     document.querySelector('form').addEventListener('submit', (e) => {
         e.preventDefault();
-        submit();
+        document.querySelector(".cover").classList.remove("hidden");
+        var count = 0;
+        for (var i = 1; i <= 5; i++) {
+            if (document.querySelector('input[name="question' + i + '"]:checked')) {
+                count++;
+            }
+        }
+        document.getElementById('countAnswer').innerText = count;
     }, false);
+
+    document.getElementById('no').addEventListener('click', () => {
+        document.querySelector('.cover').classList.add('hidden');
+    });
+    document.getElementById('yes').addEventListener('click', submit);
 
     var time = 60 * 5;
     var timer = document.getElementById('timer');
@@ -221,7 +303,7 @@
         if (time == 60) {
             document.querySelector('.timerBlock').style.animationPlayState = "running";
         }
-        if(time == 59){
+        if (time == 59) {
             document.querySelector('.timerBlock').style.animationPlayState = "paused";
         }
     }, 1000);

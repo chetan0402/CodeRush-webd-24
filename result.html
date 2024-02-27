@@ -1,50 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="colors.css">
     <script src="inject.js"></script>
     <title>Result</title>
     <style>
-        body{
+        body {
             background-color: var(--shade-grade-1);
-            color:var(--shade-grade-4);
-            font-family:'Montserrat', sans-serif;
+            color: var(--shade-grade-4);
+            font-family: 'Montserrat', sans-serif;
             transition: all var(--transition-duration);
         }
-        .congo{
+
+        .congo {
             text-align: center;
             margin-top: 10vh;
         }
-        .congo h1{
+
+        .congo h1 {
             letter-spacing: 1px;
         }
-        .submitted{
+
+        .submitted {
             background-color: var(--shade-grade-2);
             border-radius: 15px;
             margin: auto 10vw;
             padding: 10px 20px;
             transition: all var(--transition-duration);
+            box-shadow: 0 0 10px var(--shade-grade-2);
         }
-        .submitted h1{
+
+        .submitted h1 {
             font-size: 30px;
-            font-weight: 900;
+            font-weight: bold;
         }
-        .submitted p{
+
+        .submitted p {
             padding-left: 1vw;
             margin-left: 1vw;
         }
-        hr{
+
+        hr {
             margin: 10px -20px;
             border: 1px dashed var(--shade-grade-3);
             transition: all var(--transition-duration);
         }
     </style>
 </head>
+
 <body>
     <div class="congo">
         <h1>Congratulations!</h1>
@@ -68,13 +78,14 @@
     var question3 = sessionStorage.getItem('question3');
     var question4 = sessionStorage.getItem('question4');
     var question5 = sessionStorage.getItem('question5');
-    var time = (60*5) - parseInt(sessionStorage.getItem("time"));
+    var time = (60 * 5) - parseInt(sessionStorage.getItem("time"));
 
     document.getElementById('question1').innerHTML = question1;
     document.getElementById('question2').innerHTML = question2;
     document.getElementById('question3').innerHTML = question3;
     document.getElementById('question4').innerHTML = question4;
     document.getElementById('question5').innerHTML = question5;
-    document.getElementById('time').innerHTML = ((time-(time%60))/60)+":"+((time%60<10)?("0"):(""))+time%60;
+    document.getElementById('time').innerHTML = ((time - (time % 60)) / 60) + ":" + ((time % 60 < 10) ? ("0") : ("")) + time % 60;
 </script>
+
 </html>
